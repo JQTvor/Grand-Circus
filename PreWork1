@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+
+            //The variables.
+            string firstNumber, secondNumber; ;
+            char oneNumberOne, oneNumberTwo, oneNumberThree, twoNumberOne, twoNumberTwo, twoNumberThree;
+            int numberOne, numberTwo, one1, one2, one3, two1, two2, two3, one1Two1, one2Two2, one3Two3;
+            bool program = true, moveOn = true;
+
+            //Explaing what the program is going to do.
+            Console.WriteLine("Let's break down two numbers to see if we can find out if the digits in the places equal each other when they added.");
+
+
+
+                Console.WriteLine("Enter a 3 digit integer that is more then 99 and less then 1000.");
+
+            while (program == true)
+            {
+                moveOn = true;
+                //the loop that allows the user to reenter the number if it was out of range.
+                while (moveOn == true)
+                {
+                    firstNumber = Console.ReadLine();
+                    numberOne = Convert.ToInt16(firstNumber); //casts into an integer to make sure the correct numbers were entered
+     
+
+
+                    Console.WriteLine("Enter a 2nd 3 digit integer between 99 and 1000");
+                    secondNumber = Console.ReadLine();
+                    numberTwo = Convert.ToInt16(secondNumber);//casts into an integer to make sure the correct numbers were entered
+
+                    //Logic to see if the user input the correct number
+                    if (numberOne < 100 || numberOne > 1000)
+                    {
+
+                        Console.WriteLine("Your first number was less then 100 or greater then 1000 with 3 digits.");
+                        program = true;
+                        moveOn = false;
+
+
+                    }
+                    if (numberTwo < 100 || numberTwo > 1000)
+                    {
+                        Console.WriteLine("Your second number was less then 100 or greater then 1000 with 3 digits.");
+                        program = true;
+                        moveOn = false;
+                    }
+                    if (numberOne > 100 && numberTwo > 100 && numberOne < 1000 && numberTwo < 1000)
+                    {
+                        oneNumberOne = firstNumber[0];
+                        one1 = Convert.ToInt16(oneNumberOne);
+                        oneNumberTwo = firstNumber[1];
+                        one2 = Convert.ToInt16(oneNumberTwo);
+                        oneNumberThree = firstNumber[2];
+                        one3 = Convert.ToInt16(oneNumberThree);
+
+                        twoNumberOne = secondNumber[0];
+                        two1 = Convert.ToInt16(twoNumberOne);
+                        twoNumberTwo = secondNumber[1];
+                        two2 = Convert.ToInt16(twoNumberTwo);
+                        twoNumberThree = secondNumber[2];
+                        two3 = Convert.ToInt16(twoNumberThree);
+
+                        one1Two1 = one1 + two1;
+                    one2Two2 = one2 + two2;
+                    one3Two3 = one3 + two3;
+
+
+                        //Seeing if the numbers in the digit slot, when added, equal each other.
+                        if (one1Two1 == one2Two2 && one1Two1 == one3Two3)
+                        {
+                            Console.WriteLine("True");
+                            program = false;
+                            moveOn = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("False");
+                            program = false;
+                            moveOn = false;
+                        }
+                    }
+                    else
+                    {
+                        program = false;
+                        moveOn = false;
+                    }
+                }
+            }
+                Console.ReadKey();
+
+
+
+
+
+            }
+        }
+    }
+
+        
+            
+        
+    
