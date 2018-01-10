@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PreWork2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            DateTime d1, d2;
+            int dayDiff, hourDiff, minuteDiff;
+            
+
+
+            Console.WriteLine("Enter a your birthdate. xx/xx/xxxx");
+            d1 = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter todays date. xx/xx/xxxx");
+            d2 = DateTime.Parse(Console.ReadLine());
+
+           dayDiff = (d2 - d1).Days;
+            hourDiff = dayDiff * 24;
+            minuteDiff = hourDiff * 60;
+
+            Console.WriteLine("You have been alive for " + dayDiff + " days OR " + hourDiff + " hours OR " + minuteDiff + " minutes.");
+
+
+
+
+            
+
+            Console.ReadLine();
+        }
+    }
+}
