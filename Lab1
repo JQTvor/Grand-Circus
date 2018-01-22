@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LabOne
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool Program=true,moveOn=true;
+            while (Program == true)
+            { 
+                while (moveOn == true)
+                    {
+
+                        Console.WriteLine("Welcome to the Grand Circus' Room Detail Generator!");
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Enter the Length in feet");
+                        string widthFoot = Console.ReadLine();
+                        int widthFT = Convert.ToInt32(widthFoot);
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Where there any inches left?  If not, put zero.");
+                        string widthInches = Console.ReadLine();
+                        int widthIN = Convert.ToInt32(widthInches);
+
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Enter the width in feet.");
+                        string lengthFoot = Console.ReadLine();
+                        int lengthFT = Convert.ToInt32(lengthFoot);
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Where there any inches left?  If not, put zero.");
+                        string lengthInches = Console.ReadLine();
+                        int lengthIN = Convert.ToInt32(lengthInches);
+
+                        double totalLength = ((lengthFT * 12.000) + lengthIN) / 12.000;
+                        double totalWidth = ((widthFT * 12.000) + widthIN) / 12.000;
+                        double area = totalLength * totalWidth;
+
+                        double param = (totalLength * 2) + (totalWidth * 2);
+
+                        Console.WriteLine("Area: " + area);
+                        Console.WriteLine("Parimeter: " + param);
+
+                        Console.WriteLine("Would you like to measure another room? Y or N");
+                        string answer = Console.ReadLine();
+
+                            if (answer == "Y")
+                        {
+                            moveOn = true;
+                        }
+                            if (answer == "y")
+                        {
+                            moveOn = true;
+                        }
+                        else
+                        {
+                            moveOn = false;
+                            Program = false;
+                        }
+                    }
+                }
+
+            Console.ReadLine();
+
+
+
+
+        }
+    }
+}
